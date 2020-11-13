@@ -28,7 +28,7 @@ public class Processor {
 					InvokeDynamicInsnNode dyn = (InvokeDynamicInsnNode) insn;
 					if (dyn.bsmArgs.length == 9) {
 						Handle bootstrap = dyn.bsm;
-						if (bootstrap.getDesc().equals(bootstrapDesc)) {
+                        if (bootstrap.getDesc().equals(bootstrapDesc)) {
 							int legitOpCode = (Integer) dyn.bsmArgs[0];			
 							String legitOwner = dyn.bsmArgs[1].toString().replace("L", "").replace(";", "");
 							String legitMethod = decryptInvoke(dyn.bsmArgs[2].toString(),2038);
